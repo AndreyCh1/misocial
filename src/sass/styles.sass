@@ -1,0 +1,561 @@
+@import components/fonts
+
+$linearGradient: linear-gradient(-60deg, rgba(#87d3cd,.7) 0%, rgba(#6d45e1,.7) 100%)
+
+=media ($size)
+    @media screen and (min-width: #{$size}px)
+        @content
+
+=title($fontSize: 86rem, $color: #fff)
+    color: $color
+    font-size: $fontSize
+    font-weight: 500
+    font-family: "Maven Pro"
+    text-align: center
+
+=pSpan($color: #fff)
+    align-self: center
+    letter-spacing: 1px
+    text-transform: uppercase
+    color: $color
+    font: 700 14rem/2.28em "Maven Pro"
+
+=description($color: #fff)
+    color: $color
+    font: 400 16rem/1.75em "Maven Pro"
+    text-align: center
+
+html,
+body
+    margin: 0
+    font-size: 0.8px
+    scroll-behavior: smooth
+    +media(425)
+        font-size: 1px
+    +media(2560)
+        font-size: 1.5px
+
+hr
+    margin: 30rem 0
+    opacity: 0.200
+    background-color: #bdbdc2
+    border: none
+    border-top: 1rem solid #bdbdc2
+
+.wrapper
+    margin: auto
+    padding: 0 20rem
+    max-width: 1820rem
+
+.header
+    padding: 50rem 0
+    background: $linearGradient, url(../img/header_background.png) center / cover
+
+    h1
+        margin: 10rem 0 16rem
+        letter-spacing: -3rem
+        +title
+
+.main_navigation
+    display: flex
+    justify-content: space-between
+    align-items: center
+    // flex-wrap: wrap
+    row-gap: 20rem
+    +media(392)
+        flex-wrap: nowrap
+
+    p
+        color: #fff
+
+.logo
+    display: flex
+    align-items: center
+    text-decoration: none
+
+    img
+        margin-right: 17rem
+
+    b
+        margin: 0
+        letter-spacing: 6rem
+        font: 700 30rem "Maven Pro"
+
+.burger_menu
+    position: relative
+    width: 40rem
+    height: 24rem
+    +media(1200)
+        display: none
+
+.top,
+.middle,
+.bottom
+    position: absolute
+    width: 100%
+    height: 4rem
+    background-color: #fff
+    border-radius: 3rem
+    transition: all 0.4s ease
+
+.top
+    top: 0
+
+.middle
+    top: 50%
+    transform: translateY(-50%)
+
+.bottom
+    bottom: 0
+
+.burger_menu_open
+    width: 40rem
+    height: 24rem
+
+.burger_menu_open .top
+    top: 40%
+    width: 82%
+    transform: rotate(45deg)
+
+.burger_menu_open .middle
+    opacity: 0
+
+.burger_menu_open .bottom
+    top: 40%
+    width: 82%
+    transform: rotate(-45deg)
+
+.top_menu
+    display: none
+    +media(1200)
+        display: flex
+        align-items: center
+
+.menu
+    padding-right: 30rem
+
+.top_menu_open
+    position: fixed
+    top: 140rem
+    left: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    row-gap: 20rem
+    width: 100%
+    height: calc(100% - 140rem)
+    backdrop-filter: blur(5rem)
+    background: $linearGradient
+    border-radius: 0 0 5rem 5rem
+    z-index: 2
+
+    nav
+        padding: 0
+    
+    ul
+        justify-content: center
+        flex-direction: column
+        align-items: center
+        text-align: center
+        padding: 0
+
+.list
+    display: flex
+    list-style: none
+
+    a
+        position: relative
+        display: inline-block
+        padding: 13rem 30rem
+        color: #fff
+        text-decoration: none
+        font: 500 16rem/1.18em "Maven Pro"
+        box-sizing: border-box
+
+        &:before
+            position: absolute
+            content: ''
+            bottom: 0
+            left: 0
+            width: 100%
+            height: 2rem
+            background-color: #fff
+            transform: scaleX(0)
+            transition: transform .5s ease
+
+        &:hover
+            &:before
+                transform: scaleX(1)
+
+.main_menu_button
+
+    a
+        display: inline-block
+        padding: 18rem 30rem
+        letter-spacing: 1rem
+        font: 700 12rem "Maven Pro"
+        text-align: center
+        text-transform: uppercase
+        text-decoration: none
+        color: #fff
+        background-color: rgba(110,69,226,0)
+        border: 1rem solid #fff
+        border-radius: 50rem
+        transition: all .5s ease
+
+        &:hover
+            color: #c2c9db
+            background-color: #fff
+
+.pricing_table
+    display: flex
+    flex-direction: column
+    align-self: center
+    margin: 170rem 0
+
+    p
+        margin: 0
+        align-self: center
+        max-width: 387rem
+        +description
+
+        span
+            position: relative
+            +pSpan
+
+            &:before
+                position: absolute
+                content: ''
+                top: 9rem
+                left: -35rem
+                width: 25rem
+                height: 1rem
+                background-color: #fff
+
+            &:after
+                position: absolute
+                content: ''
+                top: 9rem
+                right: -35rem
+                width: 25rem
+                height: 1rem
+                background-color: #fff
+
+.button_next
+    margin: auto
+    width: 64rem
+    height: 64rem
+
+    a
+        position: relative
+        display: block
+        width: 100%
+        height: 100%
+        border-radius: 32rem
+        background-color: #fff
+        box-shadow: 0 0 10.5rem rgba(204,204,223,0.5)
+        border: 1rem solid transparent
+        transition: all .5s ease
+
+        &:hover
+            border-radius: 32rem
+            background-color: rgba(110,69,226,0)
+            border-color: #fff
+
+            &:before
+                background-color: #fff
+
+            &:after
+                border: 2rem solid #fff
+                border-top: none
+                border-right: none
+        
+        &:before
+            position: absolute
+            content: ''
+            top: 24rem
+            left: 31rem
+            width: 2rem
+            height: 16rem
+            background-color: #9fa4af
+
+        &:after
+            position: absolute
+            content: ''
+            top: 29rem
+            left: 27rem
+            width: 10rem
+            height: 10rem
+            border: 2rem solid #9fa4af
+            transform: rotate(-45deg)
+            border-top: none
+            border-right: none
+            box-sizing: border-box
+    
+main
+    p
+        margin: 0
+
+.subscription
+    display: flex
+    flex-direction: column
+    align-self: center
+    padding: 115rem 0 95rem
+
+    p
+        align-self: center
+        max-width: 395rem
+        +description(#9fa4af)
+
+        span
+            position: relative
+            +pSpan(#9fa4af)
+
+            &:before
+                position: absolute
+                content: ''
+                top: 9rem
+                left: -35rem
+                width: 25rem
+                height: 1rem
+                background-color: #6e45e2
+
+            &:after
+                position: absolute
+                content: ''
+                top: 9rem
+                right: -35rem
+                width: 25rem
+                height: 1rem
+                background-color: #6e45e2
+
+    h2
+        margin: 10rem 0 25rem
+        letter-spacing: -2rem
+        // line-height: 1.2em
+        +title(60rem, #4f4f6f)
+
+.offers
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    column-gap: 50rem
+    row-gap: 50rem
+    margin-bottom: 120rem
+    text-align: center
+    +media (1570)
+        flex-wrap: nowrap
+
+    figure
+        padding: 60rem 0 65rem
+        margin: 0
+        width: 440rem
+        border-radius: 30rem
+        background-color: #ffffff
+        border: 1rem solid #d7dbe8
+        transition: all .5s ease
+
+        &:hover
+            box-shadow: 0 0 80rem rgba(204,204,223,0.71)
+
+    p
+        display: block
+        font: 400 16rem/1.75em "Maven Pro"
+        text-align: center
+        color: #9fa4af
+
+        span
+            margin: 28rem 0
+            margin: 55rem 0 30rem
+            letter-spacing: 1rem
+            font: 700 14rem/2.28em "Maven Pro"
+            text-transform: uppercase
+            color: #9fa4af
+
+    .price
+        display: inline-block
+        position: relative
+        margin: 8rem 0 28rem
+        letter-spacing: -2rem
+        color: #4f4f6f
+        font: 500 60rem "Maven Pro"
+        text-align: center
+
+        b
+            position: absolute
+            content: ''
+            top: 15rem
+            left: -15rem
+            font-size: 16rem
+            letter-spacing: -1px
+            color: #4f4f6f
+
+        i
+            font-size: 16rem
+            letter-spacing: -1px
+            color: #4f4f6f
+            font-style: normal
+
+.picture
+    margin-bottom: 50rem
+    height: 110rem
+
+    img
+        height: 100%
+
+.product_description
+    margin-bottom: 55rem
+
+.buy_button
+
+    a
+        display: inline-block
+        padding: 18rem 25rem
+        width: 190rem
+        letter-spacing: 1rem
+        font: 700 12rem "Maven Pro"
+        text-align: center
+        text-transform: uppercase
+        text-decoration: none
+        color: #c2c9db
+        // box-shadow: 0 0 10.5rem rgba(204,204,223,0.5)
+        background-color: #fff
+        border: 1rem solid #d7dbe8
+        border-radius: 25rem
+        box-shadow: 0 0 20.5rem 1rem rgba(204,204,223,0.5)
+        box-sizing: border-box
+        transition: all .5s ease
+
+        &:hover
+            color: #fff
+            background-color: #6e45e2
+            border-color: transparent
+
+.social_marketing
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 180rem 0
+    text-align: center
+    background: linear-gradient(-60deg, rgba(#87d3cd,1) 0%, rgba(#87d3cd,.7) 30%, rgba(#6d45e1,.7) 70%, rgba(#6d45e1,1) 100%), url(../img/map.jpg) no-repeat left 40% top 95rem / 70vw auto
+
+    p
+        span
+            +pSpan
+
+    h3
+        margin: 0 0 20rem
+        letter-spacing: -2rem
+        line-height: 1.2em
+        +title(60rem)
+
+.social_marketing_buttons
+    display: flex
+    justify-content: center
+    column-gap: 10rem
+    row-gap: 15rem
+    flex-wrap: wrap
+    +media(490)
+        flex-wrap: nowrap
+
+.footer
+    padding: 50rem 0 25rem
+
+.footer_wrapper
+    padding: 50rem 50rem 25rem
+
+.footer_navigation
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    // flex-wrap: wrap
+    row-gap: 30rem
+    +media(1200)
+        flex-direction: row
+        justify-content: space-between
+        align-items: stretch
+        flex-wrap: nowrap
+
+    nav
+        padding: 0
+        +media(1200)
+            padding-right: 30rem
+
+    ul
+        flex-direction: column
+        align-items: center
+        padding: 0
+        +media(1200)
+            flex-direction: row
+
+    p
+        color: #37374a
+
+.footer_menu
+    display: flex
+    flex-direction: column
+    align-items: center
+    row-gap: 20rem
+    +media(1200)
+        flex-direction: row
+    a
+        color: #6a6a77  
+
+        &:hover
+            color: #756edc
+
+.footer_menu_button
+
+    a
+        display: inline-block
+        padding: 8rem 30rem
+        letter-spacing: 1px
+        font: 700 12rem/2.6em "Maven Pro"
+        text-align: center
+        text-transform: uppercase
+        text-decoration: none
+        color: #c2c9db
+        background-color: #fff
+        border: 1rem solid #d7dbe8
+        border-radius: 25rem
+        transition: all .5s ease
+
+        &:hover
+            color: #fff
+            background-color: #6e45e2
+            filter: drop-shadow(0 0 10.5rem rgba(204,204,223,0.5))
+
+.footer_block
+    display: flex
+    flex-direction: column-reverse
+    align-items: center
+    row-gap: 15rem
+    text-align: center
+    +media(650)
+        flex-direction: row
+        justify-content: space-between
+
+    p
+        margin: 0
+        opacity: 0.502
+        font: 500 14rem/1.35em "Maven Pro"
+        color: #6a6a77
+
+.social_networks
+    display: flex
+    column-gap: 10rem
+
+.svg
+    width: 21rem
+    height: 16rem
+    fill: #6a6a77
+    transition: transform .5s ease
+
+    &:hover
+        fill: darken(#6a6a77, 10%)
+        transform: scale(1.5)
+
+.sprite
+    display: none
