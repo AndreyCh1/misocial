@@ -1,6 +1,7 @@
 doctype html
 html(lang="en")
     head
+        include components/mixins.pug
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
         link(rel="stylesheet", href="css/styles.css")
@@ -18,16 +19,7 @@ html(lang="en")
                         span.bottom
                     nav.menu.top_menu#topMenu
                         ul.list
-                            li
-                                a(href="/") Home
-                            li
-                                a(href="#") Why MISOCIAL
-                            li
-                                a(href="#") Features
-                            li
-                                a(href="#") Articles
-                            li
-                                a(href="#") Pricing
+                            +menu(menu)
                         .main_menu_button
                             a(href="#") get started
                 .pricing_table
@@ -45,69 +37,7 @@ html(lang="en")
                     h2 Select a Plan
                     p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
                 .offers
-                    figure
-                        figcaption
-                            a(href="#")
-                            .picture
-                                picture
-                                    source(srcset="images/house_in_edmonton.webp", type="../img/webp")
-                                    img(src="../img/low.png", alt="")
-                            p
-                                span PERSONAL
-                            p.price
-                                b $
-                                |0
-                                i /month
-                            .product_description
-                                p Lorem ipsum dolor sit amet.
-                                p sed do eiusmod tempor incididunt ut.
-                                p Labore et dolore magna aliqua.
-                                p quis nostrud exercitation ullamco laboris.
-                                p Ea commodo consequat.
-                            .buy_button
-                                a(href="#") select plan
-                    figure
-                        figcaption
-                            a(href="#")
-                            .picture
-                                picture
-                                    source(srcset="images/house_in_edmonton.webp", type="../img/webp")
-                                    img(src="../img/medium.png", alt="")
-                            p
-                                span PERSONAL
-                            p.price
-                                b $
-                                |29
-                                i /month
-                            .product_description
-                                p Lorem ipsum dolor sit amet.
-                                p sed do eiusmod tempor incididunt ut.
-                                p Labore et dolore magna aliqua.
-                                p quis nostrud exercitation ullamco laboris.
-                                p Ea commodo consequat.
-                            .buy_button
-                                a(href="#") select plan
-                    figure
-                        figcaption
-                            a(href="#")
-                            .picture
-                                picture
-                                    source(srcset="images/house_in_edmonton.webp", type="../img/webp")
-                                    img(src="../img/high.png", alt="")
-                            p
-                                span PERSONAL
-                            p.price
-                                b $
-                                |49
-                                i /month
-                            .product_description
-                                p Lorem ipsum dolor sit amet.
-                                p sed do eiusmod tempor incididunt ut.
-                                p Labore et dolore magna aliqua.
-                                p quis nostrud exercitation ullamco laboris.
-                                p Ea commodo consequat.
-                            .buy_button
-                                a(href="#") select plan
+                    +figure(figure)
             .social_marketing
                 .wrapper                   
                     p
@@ -127,16 +57,7 @@ html(lang="en")
                     .footer_menu
                         nav.menu
                             ul.list
-                                li
-                                    a(href="/") Home
-                                li
-                                    a(href="#") Why MISOCIAL
-                                li
-                                    a(href="#") Features
-                                li
-                                    a(href="#") Articles
-                                li
-                                    a(href="#") Pricing
+                                +menu(menu)
                         .buy_button.footer_menu_button
                             a(href="#") get started
                 hr

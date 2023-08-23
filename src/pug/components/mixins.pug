@@ -22,7 +22,55 @@
         }
     ]
 
+-
+    let figure = [
+        {
+            srcset: "images/low.webp",
+            src: "../img/low.png",
+            span: "PERSONAL",
+            price: "0",
+            url: "#"
+        },
+        {
+            srcset: "images/medium.webp",
+            src: "../img/medium.png",
+            span: "PERSONAL",
+            price: "29",
+            url: "#"
+        },
+        {
+            srcset: "images/high.webp",
+            src: "../img/high.png",
+            span: "PERSONAL",
+            price: "49",
+            url: "#"
+        }
+    ]
+
 mixin menu (items)
     for item in items
         li
             a(href=item.url) #{item.name}
+
+mixin figure (items)
+    for item in items
+        figure
+            figcaption
+                .picture
+                    picture
+                        source(srcset=item.srcset, type="../img/webp")
+                        img(src=item.src, alt="")
+                p
+                    span #{item.span}
+                p.price
+                    b $
+                    | #{item.price}
+                    i /month
+                .product_description
+                    p Lorem ipsum dolor sit amet.
+                    p sed do eiusmod tempor incididunt ut.
+                    p Labore et dolore magna aliqua.
+                    p quis nostrud exercitation ullamco laboris.
+                    p Ea commodo consequat.
+                .buy_button
+                    a(href=item.url) select plan
