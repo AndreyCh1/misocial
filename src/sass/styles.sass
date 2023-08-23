@@ -1,6 +1,10 @@
 @import components/fonts
 
 $linearGradient: linear-gradient(-60deg, rgba(#87d3cd,.7) 0%, rgba(#6d45e1,.7) 100%)
+$transparent: rgba(110,69,226,0)
+$lightGray: #c2c9db
+$darkGrey: #9fa4af
+$blue: #6e45e2
 
 =media ($size)
     @media screen and (min-width: #{$size}px)
@@ -65,7 +69,7 @@ hr
     +media(392)
         flex-wrap: nowrap
 
-    p
+    b
         color: #fff
 
 .logo
@@ -127,9 +131,11 @@ hr
 
 .top_menu
     display: none
+    overflow: scroll
     +media(1200)
         display: flex
         align-items: center
+        overflow: visible
 
 .menu
     padding-right: 30rem
@@ -199,13 +205,13 @@ hr
         text-transform: uppercase
         text-decoration: none
         color: #fff
-        background-color: rgba(110,69,226,0)
+        background-color: $transparent
         border: 1rem solid #fff
         border-radius: 50rem
         transition: all .5s ease
 
         &:hover
-            color: #c2c9db
+            color: $lightGray
             background-color: #fff
 
 .pricing_table
@@ -260,7 +266,7 @@ hr
 
         &:hover
             border-radius: 32rem
-            background-color: rgba(110,69,226,0)
+            background-color: $transparent
             border-color: #fff
 
             &:before
@@ -278,7 +284,7 @@ hr
             left: 31rem
             width: 2rem
             height: 16rem
-            background-color: #9fa4af
+            background-color: $darkGrey
 
         &:after
             position: absolute
@@ -287,7 +293,7 @@ hr
             left: 27rem
             width: 10rem
             height: 10rem
-            border: 2rem solid #9fa4af
+            border: 2rem solid $darkGrey
             transform: rotate(-45deg)
             border-top: none
             border-right: none
@@ -306,11 +312,11 @@ main
     p
         align-self: center
         max-width: 395rem
-        +description(#9fa4af)
+        +description($darkGrey)
 
         span
             position: relative
-            +pSpan(#9fa4af)
+            +pSpan($darkGrey)
 
             &:before
                 position: absolute
@@ -319,7 +325,7 @@ main
                 left: -35rem
                 width: 25rem
                 height: 1rem
-                background-color: #6e45e2
+                background-color: $blue
 
             &:after
                 position: absolute
@@ -328,7 +334,7 @@ main
                 right: -35rem
                 width: 25rem
                 height: 1rem
-                background-color: #6e45e2
+                background-color: $blue
 
     h2
         margin: 10rem 0 25rem
@@ -352,7 +358,7 @@ main
         margin: 0
         width: 440rem
         border-radius: 30rem
-        background-color: #ffffff
+        background-color: #fff
         border: 1rem solid #d7dbe8
         transition: all .5s ease
 
@@ -363,7 +369,7 @@ main
         display: block
         font: 400 16rem/1.75em "Maven Pro"
         text-align: center
-        color: #9fa4af
+        color: $darkGrey
 
         span
             margin: 28rem 0
@@ -371,7 +377,7 @@ main
             letter-spacing: 1rem
             font: 700 14rem/2.28em "Maven Pro"
             text-transform: uppercase
-            color: #9fa4af
+            color: $darkGrey
 
     .price
         display: inline-block
@@ -418,8 +424,7 @@ main
         text-align: center
         text-transform: uppercase
         text-decoration: none
-        color: #c2c9db
-        // box-shadow: 0 0 10.5rem rgba(204,204,223,0.5)
+        color: $lightGray
         background-color: #fff
         border: 1rem solid #d7dbe8
         border-radius: 25rem
@@ -429,7 +434,7 @@ main
 
         &:hover
             color: #fff
-            background-color: #6e45e2
+            background-color: $blue
             border-color: transparent
 
 .social_marketing
@@ -456,7 +461,7 @@ main
     column-gap: 10rem
     row-gap: 15rem
     flex-wrap: wrap
-    +media(490)
+    +media(344)
         flex-wrap: nowrap
 
 .footer
@@ -490,7 +495,7 @@ main
         +media(1200)
             flex-direction: row
 
-    p
+    b
         color: #37374a
 
 .footer_menu
@@ -509,23 +514,14 @@ main
 .footer_menu_button
 
     a
-        display: inline-block
-        padding: 8rem 30rem
-        letter-spacing: 1px
+        padding: 9rem 30rem
+        width: auto
         font: 700 12rem/2.6em "Maven Pro"
-        text-align: center
-        text-transform: uppercase
-        text-decoration: none
-        color: #c2c9db
-        background-color: #fff
-        border: 1rem solid #d7dbe8
-        border-radius: 25rem
-        transition: all .5s ease
+        color: $lightGray
 
         &:hover
             color: #fff
-            background-color: #6e45e2
-            filter: drop-shadow(0 0 10.5rem rgba(204,204,223,0.5))
+            box-shadow: 0 0 20.5rem 1rem rgba(204,204,223,0.5)
 
 .footer_block
     display: flex

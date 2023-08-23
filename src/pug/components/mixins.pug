@@ -1,0 +1,28 @@
+-
+    let menu = [
+        {
+            name: "Home",
+            url: "#"
+        },
+        {
+            name: "Why MISOCIAL",
+            url: "#"
+        },
+        {
+            name: "Features",
+            url: "#"
+        },
+        {
+            name: "Articles",
+            url: "#"
+        },
+        {
+            name: "Pricing",
+            url: "#"
+        }
+    ]
+
+mixin menu (items)
+    for item in items
+        li
+            a(href=item.url) #{item.name}
