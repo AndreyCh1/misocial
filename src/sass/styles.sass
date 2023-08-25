@@ -17,12 +17,12 @@ $blue: #6e45e2
     font-family: "Maven Pro"
     text-align: center
 
-=pSpan($color: #fff)
-    align-self: center
-    letter-spacing: 1px
-    text-transform: uppercase
-    color: $color
-    font: 700 14rem/2.28em "Maven Pro"
+// =pSpan($color: #fff)
+//     align-self: center
+//     letter-spacing: 1px
+//     text-transform: uppercase
+//     color: $color
+//     font: 700 14rem/2.28em "Maven Pro"
 
 =description($color: #fff)
     color: $color
@@ -226,27 +226,31 @@ hr
         max-width: 387rem
         +description
 
-        span
-            position: relative
-            +pSpan
+.overhead
+    position: relative
+    align-self: center
+    letter-spacing: 1px
+    text-transform: uppercase
+    color: #fff
+    font: 700 14rem/2.28em "Maven Pro"
 
-            &:before
-                position: absolute
-                content: ''
-                top: 9rem
-                left: -35rem
-                width: 25rem
-                height: 1rem
-                background-color: #fff
+    &:before
+        position: absolute
+        content: ''
+        top: 9rem
+        left: -35rem
+        width: 25rem
+        height: 1rem
+        background-color: #fff
 
-            &:after
-                position: absolute
-                content: ''
-                top: 9rem
-                right: -35rem
-                width: 25rem
-                height: 1rem
-                background-color: #fff
+    &:after
+        position: absolute
+        content: ''
+        top: 9rem
+        right: -35rem
+        width: 25rem
+        height: 1rem
+        background-color: #fff
 
 .button_next
     margin: auto
@@ -314,27 +318,27 @@ main
         max-width: 395rem
         +description($darkGrey)
 
-        span
-            position: relative
-            +pSpan($darkGrey)
+.dark
+    position: relative
+    color: $darkGrey
 
-            &:before
-                position: absolute
-                content: ''
-                top: 9rem
-                left: -35rem
-                width: 25rem
-                height: 1rem
-                background-color: $blue
+    &:before
+        position: absolute
+        content: ''
+        top: 9rem
+        left: -35rem
+        width: 25rem
+        height: 1rem
+        background-color: $blue
 
-            &:after
-                position: absolute
-                content: ''
-                top: 9rem
-                right: -35rem
-                width: 25rem
-                height: 1rem
-                background-color: $blue
+    &:after
+        position: absolute
+        content: ''
+        top: 9rem
+        right: -35rem
+        width: 25rem
+        height: 1rem
+        background-color: $blue
 
     h2
         margin: 10rem 0 25rem
@@ -444,10 +448,6 @@ main
     padding: 180rem 0
     text-align: center
     background: linear-gradient(-60deg, rgba(#87d3cd,1) 0%, rgba(#87d3cd,.7) 30%, rgba(#6d45e1,.7) 70%, rgba(#6d45e1,1) 100%), url(../img/map.jpg) no-repeat left 40% top 95rem / 70vw auto
-
-    p
-        span
-            +pSpan
 
     h3
         margin: 0 0 20rem
