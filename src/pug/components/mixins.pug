@@ -25,22 +25,20 @@
 -
     let figure = [
         {
-            srcset: "images/low.webp",
-            src: "../img/low.png",
+            src: "img/low",
             span: "PERSONAL",
             price: "0",
             url: "#"
         },
         {
-            srcset: "images/medium.webp",
-            src: "../img/medium.png",
+            src: "img/medium",
             span: "PERSONAL",
             price: "29",
             url: "#"
         },
         {
-            srcset: "images/high.webp",
-            src: "../img/high.png",
+            src: "img/high",
+
             span: "PERSONAL",
             price: "49",
             url: "#"
@@ -58,8 +56,8 @@ mixin figure (items)
             figcaption
                 .picture
                     picture
-                        source(srcset=item.srcset, type="../img/webp")
-                        img(src=item.src, alt="")
+                        source(srcset=item.src +".webp", type="image/webp")
+                        img(src=item.src +".png", alt="")
                 p
                     span #{item.span}
                 p.price

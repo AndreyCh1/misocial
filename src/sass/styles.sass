@@ -17,18 +17,6 @@ $blue: #6e45e2
     font-family: "Maven Pro"
     text-align: center
 
-// =pSpan($color: #fff)
-//     align-self: center
-//     letter-spacing: 1px
-//     text-transform: uppercase
-//     color: $color
-//     font: 700 14rem/2.28em "Maven Pro"
-
-=description($color: #fff)
-    color: $color
-    font: 400 16rem/1.75em "Maven Pro"
-    text-align: center
-
 html,
 body
     margin: 0
@@ -220,14 +208,9 @@ hr
     align-self: center
     margin: 170rem 0
 
-    p
-        margin: 0
-        align-self: center
-        max-width: 387rem
-        +description
-
-.overhead
+.subtitle
     position: relative
+    display: inline-block
     align-self: center
     letter-spacing: 1px
     text-transform: uppercase
@@ -237,8 +220,8 @@ hr
     &:before
         position: absolute
         content: ''
-        top: 9rem
-        left: -35rem
+        top: 14rem
+        left: -40rem
         width: 25rem
         height: 1rem
         background-color: #fff
@@ -246,11 +229,19 @@ hr
     &:after
         position: absolute
         content: ''
-        top: 9rem
-        right: -35rem
+        top: 14rem
+        right: -40rem
         width: 25rem
         height: 1rem
         background-color: #fff
+
+.discription
+    margin: 0
+    align-self: center
+    max-width: 387rem
+    color: #fff
+    font: 400 16rem/1.75em "Maven Pro"
+    text-align: center
 
 .button_next
     margin: auto
@@ -313,38 +304,38 @@ main
     align-self: center
     padding: 115rem 0 95rem
 
-    p
-        align-self: center
-        max-width: 395rem
-        +description($darkGrey)
+    h2
+        margin: 10rem 0 25rem
+        letter-spacing: -2rem
+        // line-height: 1.2em
+        +title(60rem, #4f4f6f)
 
 .dark
     position: relative
     color: $darkGrey
 
     &:before
-        position: absolute
-        content: ''
-        top: 9rem
-        left: -35rem
-        width: 25rem
-        height: 1rem
+        // position: absolute
+        // content: ''
+        // top: 9rem
+        // left: -35rem
+        // width: 25rem
+        // height: 1rem
         background-color: $blue
 
     &:after
-        position: absolute
-        content: ''
-        top: 9rem
-        right: -35rem
-        width: 25rem
-        height: 1rem
+        // position: absolute
+        // content: ''
+        // top: 9rem
+        // right: -35rem
+        // width: 25rem
+        // height: 1rem
         background-color: $blue
 
-    h2
-        margin: 10rem 0 25rem
-        letter-spacing: -2rem
-        // line-height: 1.2em
-        +title(60rem, #4f4f6f)
+.discription_dark
+    align-self: center
+    max-width: 395rem
+    color: $darkGrey
 
 .offers
     display: flex
@@ -505,6 +496,7 @@ main
     row-gap: 20rem
     +media(1200)
         flex-direction: row
+
     a
         color: #6a6a77  
 
