@@ -217,23 +217,20 @@ hr
     color: #fff
     font: 700 14rem/2.28em "Maven Pro"
 
-    &:before
-        position: absolute
-        content: ''
-        top: 14rem
-        left: -40rem
-        width: 25rem
-        height: 1rem
-        background-color: #fff
-
+    &:before,
     &:after
         position: absolute
         content: ''
         top: 14rem
-        right: -40rem
         width: 25rem
         height: 1rem
         background-color: #fff
+
+    &:before
+        left: -40rem
+
+    &:after
+        right: -40rem
 
 .discription
     margin: 0
@@ -315,21 +312,9 @@ main
     color: $darkGrey
 
     &:before
-        // position: absolute
-        // content: ''
-        // top: 9rem
-        // left: -35rem
-        // width: 25rem
-        // height: 1rem
         background-color: $blue
 
     &:after
-        // position: absolute
-        // content: ''
-        // top: 9rem
-        // right: -35rem
-        // width: 25rem
-        // height: 1rem
         background-color: $blue
 
 .discription_dark
@@ -445,6 +430,11 @@ main
         letter-spacing: -2rem
         line-height: 1.2em
         +title(60rem)
+
+.social_marketing_subtitle
+    &:before,
+    &:after
+        display: none
 
 .social_marketing_buttons
     display: flex
