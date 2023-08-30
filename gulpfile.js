@@ -11,6 +11,7 @@ import imagemin from "gulp-imagemin"
 import cache from "gulp-cache"
 import gcmq from "gulp-group-css-media-queries"
 import cleanCSS from "gulp-clean-css"
+import svgmin from "gulp-svgmin"
 
 const sass = gulpSass(coreSass)
 
@@ -110,6 +111,23 @@ export const images = () => {
     }))
 }
 
+export const svg = () => {
+    return gulp
+    .src([
+        "src/pug/components/res/*.svg"
+    ])
+    .pipe(svgmin({
+        multipass: true,
+        params: {
+            minify: true,
+        }
+    }))
+    .pipe(gulp.dest('src/pug/components/svg/'))
+    .pipe(browserSync.reload({
+        stream: true
+    }))
+}
+
 export const clear = () => {
     return cache.clearAll()
 }
@@ -125,10 +143,12 @@ export const watch = () => {
     gulp.watch("src/*.*", gulp.parallel (files))
     gulp.watch("src/fonts/**/*.*", gulp.parallel (fonts))
     gulp.watch("src/img/**/*.*", gulp.parallel (images))
+    gulp.watch("src/pug/components/res/*.svg", gulp.parallel (svg))
 }
 
 export default gulp.series(
     delDocs,
+    svg,
     gulp.parallel(
         watch,
         html,

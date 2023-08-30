@@ -23,54 +23,70 @@
     ]
 
 -
-    let figure = [
-        {
-            srcset: "images/low.webp",
-            src: "../img/low.png",
+    let figures = {
+        low_plan: {
+            src: "../img/low",
+            alt: "low_plan_marketing",
             span: "PERSONAL",
             price: "0",
+            description: [
+                "Lorem ipsum dolor sit amet.",
+                "sed do eiusmod tempor incididunt ut.",
+                "Labore et dolore magna aliqua.",
+                "quis nostrud exercitation ullamco laboris.",
+                "Ea commodo consequat."
+            ],
             url: "#"
         },
-        {
-            srcset: "images/medium.webp",
-            src: "../img/medium.png",
+        medium_plan: {
+            src: "../img/medium",
+            alt: "medium_plan_marketing",
             span: "PERSONAL",
             price: "29",
+            description: [
+                "Lorem ipsum dolor sit amet.",
+                "sed do eiusmod tempor incididunt ut.",
+                "Labore et dolore magna aliqua.",
+                "quis nostrud exercitation ullamco laboris.",
+                "Ea commodo consequat."
+            ],
             url: "#"
         },
-        {
-            srcset: "images/high.webp",
-            src: "../img/high.png",
+        high_plan: {
+            src: "../img/high",
+            alt: "high_plan_marketing",
             span: "PERSONAL",
             price: "49",
+            description: [
+                "Lorem ipsum dolor sit amet.",
+                "sed do eiusmod tempor incididunt ut.",
+                "Labore et dolore magna aliqua.",
+                "quis nostrud exercitation ullamco laboris.",
+                "Ea commodo consequat."
+            ],
             url: "#"
         }
-    ]
+    }
 
 mixin menu (items)
     for item in items
         li
             a(href=item.url) #{item.name}
 
-mixin figure (items)
-    for item in items
-        figure
-            figcaption
-                .picture
-                    picture
-                        source(srcset=item.srcset, type="../img/webp")
-                        img(src=item.src, alt="")
-                p
-                    span #{item.span}
-                p.price
-                    b $
-                    | #{item.price}
-                    i /month
-                .product_description
-                    p Lorem ipsum dolor sit amet.
-                    p sed do eiusmod tempor incididunt ut.
-                    p Labore et dolore magna aliqua.
-                    p quis nostrud exercitation ullamco laboris.
-                    p Ea commodo consequat.
-                .buy_button
-                    a(href=item.url) select plan
+mixin figures (item)
+    figure
+        figcaption
+            picture.picture
+                source(srcset=item.src + ".webp", type="image/webp")
+                img(src=item.src + ".png", alt=item.alt)
+            p
+                span #{item.span}
+            p.price
+                b $
+                | #{item.price}
+                i /month
+            .product_description
+                for text in item.description
+                    p #{text}
+            .buy_button
+                a(href=item.url) select plan
