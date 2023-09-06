@@ -23,31 +23,30 @@ html(lang="en")
                         .main_menu_button
                             a(href="#") get started
                 .pricing_table
-                    p
-                        span SOCIAL MARKETING & ANALYTICS
-                    //- .overhead SOCIAL MARKETING & ANALYTICS
+                    //- p
+                    //-     span SOCIAL MARKETING & ANALYTICS
+                    .subtitle SOCIAL MARKETING & ANALYTICS
                     h1 Pricing Table
-                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
-                    //- .subtitle Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                    //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                    .discription Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
                 .button_next
                     a(href="#main")
         main#main
             .wrapper
                 .subscription
-                    p
-                        span MISOCIAL
-                    //- .overhead.dark MISOCIAL
+                    //- p
+                    //-     span MISOCIAL
+                    .subtitle.dark MISOCIAL
                     h2 Select a Plan
-                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
-                    //- .subtitle.subtitle_dark Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                    //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                    .discription.discription_dark Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
                 .offers
-                    +figures (figures.low_plan)
-                    +figures (figures.medium_plan)
-                    +figures (figures.high_plan)
+                    +figures(figures.low_plan)
+                    +figures(figures.medium_plan)
+                    +figures(figures.high_plan)
             .social_marketing
                 .wrapper                   
-                    p
-                        span SOCAL MARKETING & ANALYTICS
+                    .subtitle.social_marketing_subtitle SOCIAL MARKETING & ANALYTICS
                     h3 Take control of your data
                     .social_marketing_buttons
                         .buy_button
@@ -64,8 +63,8 @@ html(lang="en")
                         nav.menu
                             ul.list
                                 +menu(menu)
-                        .buy_button.footer_menu_button
-                            a(href="#") get started
+                            .buy_button.footer_menu_button
+                                a(href="#") get started
                 hr
                 .footer_block
                     p © 2017 Mass Impressions & Tranmautritam. Make the right impression.
@@ -82,7 +81,7 @@ html(lang="en")
                         a(href="#")
                             svg.svg
                                 use(xlink:href="#in")
-        include components/svg/sprite.svg
+        include ../img/svg_sprite/sprite.svg
         script(src="js/scripts.js")
 
 
