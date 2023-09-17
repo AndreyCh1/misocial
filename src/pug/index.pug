@@ -6,7 +6,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
         link(rel="stylesheet", href="css/styles.css")
         title Document
-    body 
+    body#body
         header.header
             .wrapper
                 .main_navigation
@@ -17,36 +17,30 @@ html(lang="en")
                         span.top
                         span.middle
                         span.bottom
-                    nav.menu.top_menu#topMenu
+                    nav.top_menu#topMenu
                         ul.list
                             +menu(menu)
                         .main_menu_button
                             a(href="#") get started
-                .pricing_table
-                    //- p
-                    //-     span SOCIAL MARKETING & ANALYTICS
-                    .subtitle SOCIAL MARKETING & ANALYTICS
+                section.pricing_table
+                    p.subtitle SOCIAL MARKETING & ANALYTICS
                     h1 Pricing Table
-                    //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
-                    .discription Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                    p.discription Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
                 .button_next
                     a(href="#main")
         main#main
             .wrapper
-                .subscription
-                    //- p
-                    //-     span MISOCIAL
-                    .subtitle.dark MISOCIAL
+                section.subscription
+                    p.subtitle.dark MISOCIAL
                     h2 Select a Plan
-                    //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
-                    .discription.discription_dark Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                    p.discription.discription_dark Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
                 .offers
                     +figures(figures.low_plan)
                     +figures(figures.medium_plan)
                     +figures(figures.high_plan)
             .social_marketing
-                .wrapper                   
-                    .subtitle.social_marketing_subtitle SOCIAL MARKETING & ANALYTICS
+                section.wrapper                   
+                    p.subtitle.social_marketing_subtitle SOCIAL MARKETING & ANALYTICS
                     h3 Take control of your data
                     .social_marketing_buttons
                         .buy_button
@@ -60,7 +54,7 @@ html(lang="en")
                         img(src="../img/logo.png", alt="")
                         b MISOCIAL
                     .footer_menu
-                        nav.menu
+                        nav
                             ul.list
                                 +menu(menu)
                             .buy_button.footer_menu_button
@@ -81,7 +75,7 @@ html(lang="en")
                         a(href="#")
                             svg.svg
                                 use(xlink:href="#in")
-        include ../img/svg_sprite/sprite.svg
+        include components/svg/sprite.svg
         script(src="js/scripts.js")
 
 

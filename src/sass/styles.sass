@@ -17,18 +17,6 @@ $blue: #6e45e2
     font-family: "Maven Pro"
     text-align: center
 
-=pSpan($color: #fff)
-    align-self: center
-    letter-spacing: 1px
-    text-transform: uppercase
-    color: $color
-    font: 700 14rem/2.28em "Maven Pro"
-
-=description($color: #fff)
-    color: $color
-    font: 400 16rem/1.75em "Maven Pro"
-    text-align: center
-
 html,
 body
     margin: 0
@@ -38,6 +26,9 @@ body
         font-size: 1px
     +media(2560)
         font-size: 1.5px
+
+.body_no_scroll
+    overflow: hidden
 
 hr
     margin: 30rem 0
@@ -50,10 +41,14 @@ hr
     margin: auto
     padding: 0 20rem
     max-width: 1820rem
+    +media(1200)
+        padding: 0 50rem
 
 .header
     padding: 50rem 0
     background: $linearGradient, url(../img/header_background.png) center / cover
+    @media screen and (max-height: 470px)
+        padding: 20rem 0
 
     h1
         margin: 10rem 0 16rem
@@ -131,33 +126,37 @@ hr
 
 .top_menu
     display: none
-    overflow: scroll
+    // overflow: scroll
     +media(1200)
         display: flex
         align-items: center
-        overflow: visible
-
-// .menu
-//     padding-right: 30rem
+        // overflow: visible
 
 .top_menu_open
     position: fixed
-    top: 140rem
+    display: block
     left: 0
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    row-gap: 20rem
+    top: 140rem
+    // display: flex
+    // flex-direction: column
+    // justify-content: center
+    // align-items: center
+    // row-gap: 20rem
+    padding: 20rem 0
     width: 100%
     height: calc(100% - 140rem)
     backdrop-filter: blur(5rem)
     background: $linearGradient
     border-radius: 0 0 5rem 5rem
+    box-sizing: border-box
     z-index: 2
+    @media screen and (max-height: 470px)
+        overflow-y: scroll
+        top: 80px
+        height: calc(100% - 80px)
 
-    nav
-        padding: 0
+    // nav
+    //     padding: 0
     
     ul
         justify-content: center
@@ -165,9 +164,11 @@ hr
         align-items: center
         text-align: center
         padding: 0
+        margin-bottom: 20rem
 
 .list
     display: flex
+    padding: 0 30rem
     list-style: none
     padding-right: 30rem
 
@@ -196,6 +197,7 @@ hr
                 transform: scaleX(1)
 
 .main_menu_button
+    text-align: center
 
     a
         display: inline-block
@@ -221,33 +223,36 @@ hr
     align-self: center
     margin: 170rem 0
 
-    p
-        margin: 0
-        align-self: center
-        max-width: 387rem
-        +description
+.subtitle
+    position: relative
+    align-self: center
+    letter-spacing: 1px
+    text-transform: uppercase
+    color: #fff
+    font: 700 14rem/2.28em "Maven Pro"
 
-        span
-            position: relative
-            +pSpan
+    &:before,
+    &:after
+        position: absolute
+        content: ''
+        top: 15rem
+        width: 25rem
+        height: 1rem
+        background-color: #fff
 
-            &:before
-                position: absolute
-                content: ''
-                top: 9rem
-                left: -35rem
-                width: 25rem
-                height: 1rem
-                background-color: #fff
+    &:before
+        left: -40rem
 
-            &:after
-                position: absolute
-                content: ''
-                top: 9rem
-                right: -35rem
-                width: 25rem
-                height: 1rem
-                background-color: #fff
+    &:after
+        right: -40rem
+
+.discription
+    margin: 0
+    align-self: center
+    max-width: 387rem
+    color: #fff
+    font: 400 16rem/1.75em "Maven Pro"
+    text-align: center
 
 .button_next
     margin: auto
@@ -310,38 +315,26 @@ main
     align-self: center
     padding: 115rem 0 95rem
 
-    p
-        align-self: center
-        max-width: 395rem
-        +description($darkGrey)
-
-        span
-            position: relative
-            +pSpan($darkGrey)
-
-            &:before
-                position: absolute
-                content: ''
-                top: 9rem
-                left: -35rem
-                width: 25rem
-                height: 1rem
-                background-color: $blue
-
-            &:after
-                position: absolute
-                content: ''
-                top: 9rem
-                right: -35rem
-                width: 25rem
-                height: 1rem
-                background-color: $blue
-
     h2
         margin: 10rem 0 25rem
         letter-spacing: -2rem
         // line-height: 1.2em
         +title(60rem, #4f4f6f)
+
+.dark
+    position: relative
+    color: $darkGrey
+
+    &:before
+        background-color: $blue
+
+    &:after
+        background-color: $blue
+
+.discription_dark
+    align-self: center
+    max-width: 395rem
+    color: $darkGrey
 
 .offers
     display: flex
@@ -418,7 +411,7 @@ main
 
     a
         display: inline-block
-        padding: 18rem 25rem
+        padding: 17rem 25rem
         width: 190rem
         letter-spacing: 1rem
         font: 700 12rem "Maven Pro"
@@ -444,17 +437,18 @@ main
     align-items: center
     padding: 180rem 0
     text-align: center
-    background: linear-gradient(-60deg, rgba(#87d3cd,1) 0%, rgba(#87d3cd,.7) 30%, rgba(#6d45e1,.7) 70%, rgba(#6d45e1,1) 100%), url(../img/map.jpg) no-repeat left 40% top 95rem / 70vw auto
-
-    p
-        span
-            +pSpan
+    background: linear-gradient(-60deg, rgba(#87d3cd,1) 0%, rgba(#87d3cd,.7) 30%, rgba(#6d45e1,.7) 70%, rgba(#6d45e1,1) 100%), url(../img/map.jpg) no-repeat left 40% top 95rem / 77vw auto
 
     h3
         margin: 0 0 20rem
         letter-spacing: -2rem
         line-height: 1.2em
         +title(60rem)
+
+.social_marketing_subtitle
+    &:before,
+    &:after
+        display: none
 
 .social_marketing_buttons
     display: flex
@@ -485,14 +479,17 @@ main
         flex-wrap: nowrap
 
     nav
+        display: flex
+        flex-direction: column
+        row-gap: 20rem
         padding: 0
         +media(1200)
-            // padding-right: 30rem
+            flex-direction: row
+            flex-wrap: nowrap
 
     ul
         flex-direction: column
         align-items: center
-        padding: 0
         +media(1200)
             flex-direction: row
 
@@ -503,9 +500,9 @@ main
     display: flex
     flex-direction: column
     align-items: center
-    row-gap: 20rem
     +media(1200)
-        flex-direction: row
+        
+
     a
         color: #6a6a77  
 
@@ -513,6 +510,7 @@ main
             color: #756edc
 
 .footer_menu_button
+    text-align: center
 
     a
         display: inline-block
