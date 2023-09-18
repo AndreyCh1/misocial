@@ -76,9 +76,9 @@ mixin menu (items)
 mixin figures (item)
     figure
         figcaption
-            picture.picture
+            picture
                 source(srcset=item.src + ".webp", type="image/webp")
-                img(src=item.src + ".png", alt=item.alt)
+                img.picture(src=item.src + ".png", alt=item.alt)
             p
                 span #{item.span}
             p.price
