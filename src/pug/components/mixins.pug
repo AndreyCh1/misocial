@@ -77,7 +77,7 @@ mixin figures (item)
     figure
         figcaption
             picture
-                source(srcset=item.src + ".webp", type="image/webp")
+                source(srcset=item.src + ".webp", type="img/webp")
                 img.picture(src=item.src + ".png", alt=item.alt)
             p
                 span #{item.span}
